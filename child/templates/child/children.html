@@ -1,0 +1,160 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body >
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+   <body >
+
+      <div>
+      <nav  class="navbar navbar-toggleable navbar-dark bg-inverse" id="nav-main">
+        <a class="navbar-brand"  href="#"><img src="{% static 'image/logo.png' %}" width="300" height="120" alt="anil" ></a>
+        <ul class="nav navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link text-white" href="#">HOME<span class="sr-only">(current)</span> </a>
+            </li>
+            <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle  text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          CCI
+        </a>
+         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">SAA's</a>
+            <a class="dropdown-item" href="#">Open Shelters</a>
+            <a class="dropdown-item" href="{% url 'Children Homes' %}">Children Homes</a>
+            <a class="dropdown-item" href="{% url 'Special Homes' %}">Special Homes</a>
+            <a class="dropdown-item" href="{% url 'Observation Homes' %}">Obesrvation Homes</a>
+            <a class="dropdown-item" href="{% url 'Place For Safety' %}">Places of Safety</a>
+        </div>
+      </li>
+               <li class="nav-item ">
+                <a class="nav-link text-white" href="#">CWC</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="{% url 'lost' %}">Lost&Found</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link  text-white" href="#">About us</a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link text-white" href="{% url 'login' %}">Login</a>
+            </li>
+             <li class="nav-item">
+              <a href="{%url 'addlost' %}" class="nav-link text-white">Add new</a> 
+              </li>
+        </ul>
+        <form class="form-inline pull-md-right">
+            <input class="form-control" type="text" placeholder="Search">
+            <button class="btn" type="submit">Search</button>
+        </form>
+       </nav>
+      </div>
+
+      <div style="background: url('{% static 'childrenhomes.jpg' %}') no-repeat top; background-size: cover;max-height: 80vh;">
+         <div style="background-color: rgba(40,88,96,0.79);width: 100%;padding:50px 20px;margin: 0px;text-align:center;vertical-align:middle;">
+            <h1 class="text-white" style="text-align: center;margin-top: 25vh"><strong>Children Homes</strong></h1>
+            <p class="text-white" style="text-align: center;margin-top: 2vh;">A child care institution as defined under the JJ Act,2015, means Children Home,Open Shelter, Observation Home,</p>
+            <p class="text-white" style="text-align: center;margin-top: 2vh;"> Special Home, Place of Safety, Specialized Adoption Agency and a Fit Facility recognized under the Act for providing care </p>
+            <p class="text-white" style="text-align: center;margin-top: 2vh;">and protection to children, who are in need of such services.Children in conflict with law are provided</p>
+            <p class="text-white" style="text-align: center;margin-top: 2vh;"> residential care & protection in Observation Homes, Special Homes & Places of Safety.</p>
+            <p class="text-white" style="text-align: center;margin-top: 2vh;"> These does not exceed 4 months.</p>
+         </div>
+      </div>
+      {% for i in info %}
+<p><a href="{% url 'listch'%}">{{i.name}}</a></p>
+{% endfor %}
+
+     <div style="margin:10vh 30vw">
+            <p style="font-size: 5vh">Find Children Home in your state</p>
+            <p style="font-size: 5vh">Enter your state</p>
+            <input style="background: inherit;" list="state" name="state" placeholder="Select state" required>
+  			<datalist id="state">
+  			   <option value="Andaman and Nicobar Islands(Union Territory)">
+    			<option value="Andhra Pradesh">
+    			<option value="Arunachal Pradesh">
+    			<option value="Assam">
+    			<option value="Bihar">
+    			<option value="Chandigarh(Union Territory)">
+    			<option value="Chhattisgarh">
+    			<option value="Dadra and Nagar Haveli(Union Territory)">
+    			<option value="Daman and Diu(Union Territory)">
+    			<option value="Delhi(National Capital Territory)">
+    			<option value="Goa">
+    			<option value="Gujarat">
+    			<option value="Haryana">
+    			<option value="Himachal Pradesh">
+    			<option value="Jammu & Kashmir">
+    			<option value="Jharkhand">
+    			<option value="Karnataka">
+    			<option value="Kerela">
+    			<option value="Lakshadweep(Union Territory)">
+    			<option value="Madhya Pradesh">
+    			<option value="Maharashtra">
+    			<option value="Manipur">
+    			<option value="Meghalaya">
+    			<option value="Mizoram">
+    			<option value="Nagaland">
+    			<option value="Odisha">
+    			<option value="Puducherry(Union Territory)">
+    			<option value="Punjab">
+    			<option value="Rajasthan">
+    			<option value="Sikkim">
+    			<option value="Tamil Nadu">
+    			<option value="Telangana">
+    			<option value="Tripura">
+    			<option value="Uttarakhand">
+    			<option value="Uttar Pradesh">
+    			<option value="West Bengal">
+  			</datalist>
+            <a href="#" ><button type="submit" class="btn btn-outline-primary">Next</button> </a>
+    </div>
+
+
+
+
+          <div style="background: black;max-height: 70vh " class="jumbotron jumbotron-fluid">
+       <table style="border: hidden " class="table table-hover-">
+           <tr style="border: hidden">
+               <td><a style="padding-left: 150px;" href="#" class="text-white" >Home</a></td>
+               <td><a style="padding-left: 150px;" href="#" class="text-white" >About us</a></td>
+               <td><a style="padding-left: 150px;" href="#" class="text-white" >Contact us</a></td>
+           </tr>
+           <tr style="border: hidden">
+               <td><a style="padding-left: 150px;" href="#" class="text-white" >Feedback</a></td>
+               <td><a style="padding-left: 150px;" href="#" class="text-white" >Adoption</a></td>
+               <td><a style="padding-left: 150px;" href="#" class="text-white" >Donate to CCI</a></td>
+           </tr>
+           <tr style="border: hidden">
+               <td><a style="padding-left: 150px;" href="#" class="text-white"  >CWC Cases</a></td>
+               <td><a style="padding-left: 150px;" href="#" class="text-white" >CCI portal in media</a></td>
+               <td><a style="padding-left: 150px;" href="#" class="text-white" >Lost&found children</a></td>
+           </tr>
+       </table>
+
+              <a href="https://www.facebook.com/anil.lohar.50364" type="button" style=" background: #3B5998; color: white; padding: 2vh;" class="btn btn-social-icon btn-fb" target="_blank"><i class="fa fa-facebook"></i></a>
+      <a href="https://www.linkedin.com/in/anil-lohar-195967111/" type="button" style="background: #007bb5;color: white; padding: 2vh;" class="btn btn-social-icon btn-linkedin" target="_blank"><i class="fa fa-linkedin"></i></a>
+   </div>
+   <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
+<a href="{% url 'addchild' %}">ADD NEW</a>
+
+</body>
+</html>

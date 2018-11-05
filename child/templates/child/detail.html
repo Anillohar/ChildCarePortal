@@ -1,0 +1,14 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'child/child.css' %}" />
+{{question.question_text}}
+
+{% if error_message %}<p><strong>Error message</strong></p>{% endif %}
+<form action="{% url 'vote' question.id %}" method="post">
+{% csrf_token %}
+{% for choice in question.choice.set_all %}
+<input type="radio" name="choice" id ="choice{{forloop.counter }} " value="choice{{choice.id}}"/>
+<label for ="choice{{forloop.counter}}">{{choice.choice_text}}</label>
+{% endfor %}
+<input type="submit" name="vote"/>
+<a class="btn btn-default" href="{% url 'question_remove' question.id %}">delete</a>
+</form>
